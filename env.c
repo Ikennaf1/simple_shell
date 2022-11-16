@@ -2,6 +2,7 @@
 
 /**
  * env - Displays the working environment
+ * Return: 0
  */
 int env(void)
 {

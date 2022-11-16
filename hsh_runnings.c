@@ -23,7 +23,6 @@ void hsh_runnings(void)
 		if (args == NULL)
 			return;
 		args = hsh_split_cmd(buf);
-
 		if (is_built_in(args[0]))
 		{
 			run_built_in(args[0], args, buf, path);
