@@ -14,20 +14,15 @@ void set_path(char *path, char **args, char *buf)
 
 	if (args == NULL)
 		return;
-	
 	temp_args = _strdup(args[0]);
-
 	s = strtok(temp_args, "/");
-
 	for (n = 0; s != NULL; n++)
 	{
 		tok[n] = s;
 		s = strtok(NULL, "/");
 	}
-
 	for (i = 0; exec_path[i] != '\0'; i++)
 		path[i] = exec_path[i];
-
 	if (_strcmp(tok[0], "bin") != 0)
 	{
 		for (j = 0; args[0][j] != '\0'; i++, j++)

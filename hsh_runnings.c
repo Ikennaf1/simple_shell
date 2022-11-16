@@ -4,7 +4,7 @@
  * hsh_runnings - The function that keeps the shell running
  * Return: Nothing
  */
-void hsh_runnings()
+void hsh_runnings(void)
 {
 	char *path, **args, *buf;
 	pid_t pid;
@@ -15,12 +15,9 @@ void hsh_runnings()
 		if (path == NULL)
 			return;
 		write(STDOUT_FILENO, "($) ", 4);
-		fflush(stdout);
-
 		buf = (char *) malloc(1024 * sizeof(char));
 		if (buf == NULL)
 			return;
-
 		read_chars(buf);
 		args = (char **) malloc(1024 * sizeof(char));
 		if (args == NULL)
@@ -32,15 +29,14 @@ void hsh_runnings()
 			run_built_in(args[0], args, buf, path);
 			continue;
 		}
-
 		set_path(path, args, buf);
-		/*if (cmd_exists(path) == 0)
+		if (cmd_exists(path) == 0)
 		{
 			free(path);
 			free(buf);
 			free(args);
 			continue;
-		}*/
+		}
 		pid = fork();
 		if (pid < 0)
 			return;

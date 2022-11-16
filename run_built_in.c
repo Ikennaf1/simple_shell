@@ -17,5 +17,4 @@ void run_built_in(char *cmd, char **args, char *buf, char *path)
 	free(args);
 	free(buf);
 	free(path);
-	return;
 }

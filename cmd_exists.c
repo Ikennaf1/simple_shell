@@ -21,7 +21,7 @@ int cmd_exists(char *cmd)
 	s = _strdup(cmd);
 
 	cmd_split = strtok(s, " /");
-	
+
 	if (_strcmp(cmd_split, "bin") == 0)
 	{
 		while (cmd_split != NULL)

@@ -9,7 +9,6 @@
  */
 int hsh_execute(char *path, char *buf, char **args)
 {
-	extern char **environ;
 	int n;
 
 	if (execve(path, hsh_split_cmd(buf), environ) == -1)

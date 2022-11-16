@@ -12,6 +12,8 @@
 #include <signal.h>
 #include <dirent.h>
 
+extern char **environ;
+
 int _putchar(char c);
 void hsh_running();
 void hsh_runnings();

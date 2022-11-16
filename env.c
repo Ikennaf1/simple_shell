@@ -5,7 +5,6 @@
  */
 int env(void)
 {
-	extern char **environ;
 	int n = 0;
 
 	for (n = 0; environ[n] != NULL; n++)
