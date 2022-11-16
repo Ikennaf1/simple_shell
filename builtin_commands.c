@@ -9,7 +9,7 @@
  */
 int execBuiltInCommands(char **u_tokns, char *line)
 {
-	int i = 0;
+	int i = 0, n = 0;
 	char *ListBuiltinCmds[] = { "exit", "cd", "help", "env", NULL };
 
 	while (ListBuiltinCmds[i])
@@ -20,18 +20,23 @@ int execBuiltInCommands(char **u_tokns, char *line)
 			{
 				case 0:
 					_handle_exit(u_tokns, line);
+					break;
 				case 1:
 					chdir(u_tokns[1]);
-					return (1);
+					n = 1;
+					break;
 				case 2:
 					_open_help();
-					return (1);
+					n = 1;
+					break;
 				case 3:
 					_print_env();
-					return (1);
+					n = 1;
+					break;
 				default:
 					break;
 			}
+			return (n);
 		}
 		i++;
 	}
