@@ -6,6 +6,7 @@
  */
 int env(void)
 {
+	/*
 	int n = 0;
 
 	for (n = 0; environ[n] != NULL; n++)
@@ -14,5 +15,21 @@ int env(void)
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	write(STDOUT_FILENO, "\n", 1);
+	return (0);
+	*/
+	int n = 0, j = 0;
+
+	while (environ[i])
+	{
+		j = 0;
+		while (environ[i][j])
+		{
+			_putchar(environ[i][j]);
+			j++;
+		}
+		if (j != 0)
+			_putchar('\n');
+		i++;
+	}
 	return (0);
 }
